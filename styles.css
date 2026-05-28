@@ -1,0 +1,83 @@
+:root{
+	--primary:#0b7fab;
+	--accent:#06b6d4;
+	--muted:#6b7280;
+	--bg:#f7fafc;
+	--card:#ffffff;
+	--radius:10px;
+}
+
+*{box-sizing:border-box}
+.body-font{display:none}
+body{font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#111827; background:var(--bg); -webkit-font-smoothing:antialiased}
+
+/* Headings use a complementary serif for a professional look */
+h1,h2,h3{font-family:'Merriweather', serif; color:var(--primary); margin-top:0}
+.container{max-width:1100px; margin:0 auto; padding:0 16px}
+
+/* Header */
+.site-header{background:rgba(255,255,255,0.9); position:sticky; top:0; z-index:40; backdrop-filter:blur(4px); border-bottom:1px solid #e6edf2}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+.logo{font-weight:700; color:var(--primary); font-size:1.25rem}
+.main-nav a{margin-left:12px; text-decoration:none; color:var(--muted); font-weight:600}
+.main-nav a:hover{color:var(--primary)}
+
+/* Hero */
+.hero{background:linear-gradient(135deg, #0b7fab 0%, #06b6d4 60%); color:white; padding:64px 0}
+.hero-overlay{padding:48px 0}
+.hero-content h1{font-size:2rem; margin:0 0 8px}
+.hero-content .subtitle{margin:0 0 18px; opacity:0.95}
+.cta-row{margin:16px 0}
+.btn{display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:700}
+.btn.primary{background:#073e4e; color:white}
+.btn.transparent{background:transparent; color:white; border:1px solid rgba(255,255,255,0.25); margin-left:8px}
+.trust-indicators{list-style:none; padding:12px 0 0; margin:0; display:flex; gap:24px}
+.trust-indicators li{background:rgba(255,255,255,0.12); padding:10px 14px; border-radius:8px}
+.trust-indicators strong{display:block; font-size:1.1rem}
+
+/* Sections */
+.section{padding:48px 0}
+.section h2{margin:0 0 8px}
+.lead{color:var(--muted); margin-bottom:18px}
+
+/* Especialidades - grid */
+.especialidades-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr))}
+.card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(2,6,23,0.06); text-align:left}
+.card .icon{font-size:28px; margin-bottom:8px}
+.card h3{margin:6px 0}
+
+/* Medicos - Flexbox */
+.medicos-list{display:flex; gap:18px; flex-wrap:wrap}
+.medico-card{background:var(--card); border-radius:10px; display:flex; gap:12px; align-items:center; padding:14px; flex:1 1 300px; box-shadow:0 6px 14px rgba(2,6,23,0.06)}
+.medico-card .photo{width:84px; height:84px; border-radius:8px; background:linear-gradient(135deg,#e6f7fb,#daf9ff); display:flex; align-items:center; justify-content:center; color:var(--primary); font-weight:700}
+.medico-card .info h3{margin:0 0 6px}
+.medico-card .specialty{color:var(--primary); margin:0 0 6px; font-weight:700}
+
+/* Obras sociales */
+.obras-grid{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(140px,1fr))}
+.obra{background:var(--card); padding:12px; border-radius:8px; text-align:center; box-shadow:0 6px 12px rgba(2,6,23,0.04); font-weight:700}
+
+/* Contact */
+.contact-grid{display:grid; gap:18px; grid-template-columns:1fr 320px}
+.contact-details p{margin:8px 0}
+.map-placeholder{background:#e6eef2; border-radius:8px; padding:24px; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid #e6edf2; background:white; padding:18px 0}
+.footer-inner{display:flex; justify-content:space-between; gap:12px; align-items:center; font-size:0.95rem}
+
+/* Responsive tweaks */
+@media (min-width:1024px){
+	.hero-content h1{font-size:2.8rem}
+	.especialidades-grid{grid-template-columns:repeat(3, 1fr)}
+}
+
+@media (max-width:640px){
+	.main-nav{display:none}
+	.trust-indicators{flex-direction:column; gap:8px}
+	.contact-grid{grid-template-columns:1fr}
+	.footer-inner{flex-direction:column; text-align:center}
+}
+
+/* Small utilities */
+.text-center{text-align:center}
